@@ -8,6 +8,7 @@ WHERE group_name = '234 IT ing';
 -- 3 grades cədvəlində tələbələrin orta balını hesablayan SQL sorğusu yazın.
 SELECT AVG(grade) AS average_grade
 FROM grades;
+-- AS nəticənin adını dəyişmək üçün istidafə edilir.
 
 -- 4 Ən yüksək bal alan tələbənin adını və balını çıxarın.
 SELECT s.name, g.grade
