@@ -11,17 +11,10 @@ FROM grades;
 -- AS nəticənin adını dəyişmək üçün istidafə edilir.
 
 -- 4 Ən yüksək bal alan tələbənin adını və balını çıxarın.
-SELECT s.name, g.grade
-FROM students s
-JOIN grades g ON s.id = g.student_id
-ORDER BY g.grade DESC
-LIMIT 1;
-
--- 4 update 
-SELECT name, grade
+SELECT students.name, grades.grade
 FROM students
-JOIN grades ON id=student_id
-ORDER BY grade DESC
+JOIN grades ON students.id = grades.student_id
+ORDER BY grades.grade DESC
 LIMIT 1;
 
 -- 5 Hər qrup üzrə neçə tələbə olduğunu göstərən sorğu yazın.
