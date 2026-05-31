@@ -17,6 +17,13 @@ JOIN grades g ON s.id = g.student_id
 ORDER BY g.grade DESC
 LIMIT 1;
 
+-- 4 update 
+SELECT name, grade
+FROM students
+JOIN grades ON id=student_id
+ORDER BY grade DESC
+LIMIT 1;
+
 -- 5 Hər qrup üzrə neçə tələbə olduğunu göstərən sorğu yazın.
 SELECT group_name, COUNT(*) AS student_count
 FROM students
@@ -27,12 +34,24 @@ SELECT s.name, g.grade
 FROM students s
 JOIN grades g ON s.id = g.student_id;
 
+-- 6 update 
+SELECT name, grade
+FROM students
+JOIN grades ON id=student_id;
+
 -- 7 Orta balı 80-dən yüksək olan tələbələrin siyahısını çıxarın.
 SELECT s.name, AVG(g.grade) AS average_grade
 FROM students s
 JOIN grades g ON s.id = g.student_id
 GROUP BY s.id, s.name
 HAVING AVG(g.grade) > 80;
+
+-- 7 update 
+SELECT name, AVG(grade)
+FROM students
+JOIN grades ON id=student_id
+GROUP BY id, name
+HAVING AVG(grade)>80;
 
 -- 8 Eyni adda olan tələbələri çıxarın.
 SELECT name, COUNT(*) AS count
@@ -46,8 +65,20 @@ FROM students s
 JOIN grades g ON s.id = g.student_id
 GROUP BY s.id, s.name;
 
+-- 9 update 
+SELECT name, MAX(grade)
+FROM students
+JOIN grades ON id=student_id
+GROUP BY id, name;
+
 -- 10 Son 30 gündə qiymət alan tələbələrin siyahısını çıxarın.
 SELECT DISTINCT s.name
 FROM students s
 JOIN grades g ON s.id = g.student_id
 WHERE g.grade_date >= CURDATE() - INTERVAL 30 DAY;
+
+-- 10 update 
+SELECT DISTINCT name
+FROM students
+JOIN grades ON id=student_id
+WHERE grade_date >= CURDATE()-INTERVAL 30 DAY;
