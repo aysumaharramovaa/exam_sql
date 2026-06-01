@@ -1,0 +1,11 @@
+column	nədir
+id	hər tələbənin unikal nömrəsi (PRIMARY KEY)
+name	tələbənin adı
+age	tələbənin yaşı
+group_name	hansı qrupda oxuyur
+
+column	nədir
+id	hər qiymətin unikal nömrəsi
+student_id	hansı tələbəyə aiddir (students.id ilə bağlanır)
+grade	qiymət
+grade_date	qiymətin verildiyi tarix
