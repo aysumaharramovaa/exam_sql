@@ -49,12 +49,6 @@ GROUP BY name
 HAVING COUNT(*) > 1;
 
 -- 9 Hər tələbənin maksimum balını göstərən sorğu yazın.
-SELECT s.name, MAX(g.grade) AS max_grade
-FROM students s
-JOIN grades g ON s.id = g.student_id
-GROUP BY s.id, s.name;
-
--- 9 update 
 SELECT students.name, MAX(grades.grade)
 FROM students
 JOIN grades ON students.id = grades.student_id
